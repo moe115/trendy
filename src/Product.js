@@ -1,0 +1,22 @@
+import React from 'react'
+import './Product.css'
+function Product() {
+  return (
+    <div className="product">
+      <div className='product__info'>
+        <p>jacket</p>
+        <p className='product__price'>
+            <small>$</small><strong>15</strong>
+        </p>
+        <div className="product__rating">
+            <p>★</p>
+        </div>
+      </div>
+<img
+src="data:image/jpeg;base64,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" />
+<button>Add to Basket</button>
+    </div>
+  )
+}
+
+export default Product

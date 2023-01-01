@@ -1,5 +1,5 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 

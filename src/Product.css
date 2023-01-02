@@ -18,3 +18,14 @@ max-height: 400px;
     object-fit: contain;
     margin-bottom: 15px;
 }
+.product > button {
+    background: pink;
+    border: 1px solid;
+    margin-top: 10px;
+border-color: blueviolet;
+color: black;
+}
+.product__info{
+height:100px ;
+margin-bottom:15px ;
+}

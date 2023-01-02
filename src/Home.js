@@ -11,27 +11,50 @@ function Home() {
    
 
 <div className="home__row" >
-     <Product />
-     <Product /> <Product /> <Product />
+     
+     <Product
+      title="jacket" 
+      price={77.99} 
+      image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      rating={5} />
+     <Product
+      title="jacket" 
+      price={77.99} 
+      image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      rating={3} />
      {/* pr */}
 </div>
 
 
 <div className="home__row" >
-     {/* pr */}
-     {/* pr */} <Product />
-     {/* pr */} <Product />
+<Product
+      title="jacket" 
+      price={77.99} 
+      image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      rating={5} />
+       <Product
+      title="jacket" 
+      price={77.99} 
+      image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      rating={5} />
+       <Product
+      title="jacket" 
+      price={77.99} 
+      image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      rating={5} />
 </div>
 
 
 <div className="home__row" >
-    {/* pr */} <Product />
+<Product
+      title="jacket" 
+      price={77.99} 
+      image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+      rating={5} />
 </div>
 
 
- </div>
-
-    </div>
+ </div></div>
   );
 }
 

@@ -35,6 +35,8 @@ function Header() {
 <span className='header__optionLineOne'>your</span> 
 <span className='header__optionLineTwo'>prime</span>   
                 </div>
+
+                
                 <Link  to="/checkout">
 <div className="header__OptionBasket">
     <ShoppingCart /> 
@@ -42,18 +44,6 @@ function Header() {
 </div>
 </Link>
                 </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

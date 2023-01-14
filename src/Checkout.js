@@ -7,7 +7,7 @@ function Checkout() {
  
 <div className='checkout__left'>
 
-<img className='checkout__ad' src='https://i.ibb.co/7Sb16st/daenerys-jon-snow-bran-stark-posters-game-of-thrones-season-7-60-2.jpg' />
+<img className='checkout__ad' src='https://i.ibb.co/Nt4DQk9/Screenshot-2023-01-06-230850.png' />
 <div>
     <h2 className='checkout__title'>your shopping basket</h2>
     {/* BasketItem */}
@@ -25,3 +25,4 @@ function Checkout() {
 }
 
 export default Checkout
+

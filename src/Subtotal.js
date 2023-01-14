@@ -10,7 +10,7 @@ function Subtotal() {
         Subtotal(0  items):
         <strong>0</strong>
         </p>
-        <small className='subtotal__gift'><input type="checkbox" />this order contans a gift</small>
+        <small className='subtotal__gift'><input type="checkbox" />&nbsp;&nbsp;&nbsp;&nbsp;this order contans a gift</small>
         </> 
         )}
         decimalScale={2}
@@ -19,6 +19,17 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"} 
         />
+
+        
+<div class="container">
+      <a className='ss' href="#">
+      <span className='sp'></span>
+      <span className='sp'></span>
+      <span className='sp'></span>
+      <span className='sp'></span>
+      checkout
+    </a>
+  </div>
     </div>;
 }
 

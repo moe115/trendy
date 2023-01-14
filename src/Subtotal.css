@@ -8,6 +8,7 @@ padding: 20px;
 background-color: #f3f3f3;
 border: 1px solid #dddddd;
 border-radius: 3px;
+
 }
 .subtotal__gift{
     display: flex;
@@ -20,6 +21,9 @@ border-radius: 3px;
   background-color: #823585;
   display: grid;
   place-items: center;  
+  position: relative;
+  top: 10px;
+ 
 }
 .container a {
   position: relative;
@@ -125,3 +129,4 @@ a span:nth-child(4) {
     bottom: 100%;
   }
 }
+

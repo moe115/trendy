@@ -1,10 +1,16 @@
 import React from 'react';
-import './Header.css';
+import './Header.css';import { auth } from "./firebase";
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
-
+import { useStateValue } from "./StateProvider" ;
 function Header() {
+  const [ {basket , user}, dispatch] = useStateValue();
+  const handleAuthenticaton = () => {
+    if (user) {
+      auth.signOut();
+    }
+  }
   return (
     <div className="header">
       <Link to="/">
@@ -19,28 +25,32 @@ function Header() {
                 </div>
     
     
-                <div className="header__nav">
-
-                <div className="header__option">
-<span className='header__optionLineOne'>hello u</span>
-<span className='header__optionLineTwo'>signin</span>
-                </div>
-
-                <div className="header__option">
+                
+      <div className="header__nav">
+        <Link to={!user && '/login'}>
+          <div onClick={handleAuthenticaton} className="header__option">
+            <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
+            <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+          </div>
+        </Link>
+                {/* <div className="header__option">
 <span className='header__optionLineOne'>return</span>
 <span className='header__optionLineTwo'>orders</span>
-                </div>
-
+                </div> */}
+{/* 
                 <div className="header__option">
 <span className='header__optionLineOne'>your</span> 
 <span className='header__optionLineTwo'>prime</span>   
-                </div>
+                </div> */}
 
                 
-                <Link  to="/checkout">
+                <Link  to= "/checkout">
 <div className="header__OptionBasket">
     <ShoppingCart /> 
-    <span className='header__optionLineOne header__BasketCount'>0</span>
+    <span className='header__optionLineOne header__BasketCount'>
+      {basket?.length}
+      
+      </span>
 </div>
 </Link>
                 </div>

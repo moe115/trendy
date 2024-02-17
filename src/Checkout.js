@@ -3,7 +3,7 @@ import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
-
+import checkoutimg from './images/checkoutimg.jpg'
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
 
@@ -12,7 +12,7 @@ function Checkout() {
  
 <div className='checkout__left'>
  
-<img className='checkout__ad' src='https://i.ibb.co/C5SgwVh/h.jpg' />
+<img className='checkout__ad' src={checkoutimg} />
 <div>
     <h2 className='checkout__title'>your shopping basket</h2>
     {basket.map(item => (

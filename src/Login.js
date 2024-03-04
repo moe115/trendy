@@ -1,43 +1,56 @@
 import React, { useState } from 'react';
 import './login.css'
-import { Link, useNavigate } from "react-router-dom";import PhoneInput from "react-phone-input-2";
-import { auth } from "./firebase";import "react-phone-input-2/lib/style.css";
+import { Link, useNavigate } from "react-router-dom";
+import { auth , } from "./firebase";
+import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut} from "firebase/auth";
+import { Button , TextField } from '@mui/material';
 import logo12 from './images/logo12.png'
 function Login() {
     const history = useNavigate();
-
-    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const signIn = e => {
         e.preventDefault();
 
-        auth
-            .signInWithPhoneNumber(phone, password)
+       signInWithEmailAndPassword(auth,email, password)
             .then(auth => {
-                history.push('/')
+                history('/')
             })
             .catch(error => alert(error.message))
     }
+
     const register = e => {
         e.preventDefault();
 
-        auth
-            .createUserWithPhoneAndPassword(phone, password)
+        
+        createUserWithEmailAndPassword(auth,email, password)
             .then((auth) => {
                 // it successfully created a new user with email and password
                 if (auth) {
-                    history.push('/')
+                    history ('/')
+                    console.log(auth)
                 }
             })
             .catch(error => alert(error.message))
     }
 
+
+    const logout = async () => {
+        try {
+          await signOut(auth);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+
+      
     return (
         <div className='login'>
             <Link to='/'>
                 <img
                     className="login__logo"
-                    src={logo12}
+                    src={logo12} 
                 />
             </Link>
 
@@ -45,23 +58,25 @@ function Login() {
                 <h1>Sign-in</h1>
 
                 <form>
-                    <h5>phone number</h5> 
-                    <PhoneInput country="lb" type='text'  value={phone} onChange={setPhone}/>
+                    <h5>E-mail</h5>
+                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
 
                     <h5>Password</h5>
-                    <input type='text' value={password} onChange={e => setPassword(e.target.value)} />
+                    <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
 
-                    <button type='submit' onClick={signIn} className='login__signInButton'>Sign In</button>
+                    <button type='submit' onClick={signIn} className='login__registerButton'>Sign In</button>
                 </form>
 
                 <p>
-                   <h5> welcome to trendybynour, if you don't have an account</h5>
+                    By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
+                    see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
 
-                <button onClick={register}  className='login__registerButton'>Create your trendybynour Account</button>
+                <button onClick={register} className='login__registerButton'>Create your trendybynour Account</button>
+                <button  onClick={logout} className='login__registerButton'  > signout</button>
             </div>
         </div>
     )
 }
-
-export default Login 
+// sx={{marginTop:"10px" , backgroundColor:"#E6A4B4"}} 
+export default Login

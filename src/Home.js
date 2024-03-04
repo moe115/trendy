@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home">
     
-    <div classNamer="home__container">
+    <div className="home__container">
        <img className="home__image" src="https://i.ibb.co/3S4BkPP/xx.png " alt="" />
    
 

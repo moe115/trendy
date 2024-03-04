@@ -48,15 +48,7 @@
     font-size: 12px;
 }
 
-.login__signInButton {
-    background: #F5EEE6;
-    border-radius: 2px;
-    width: 100%;
-    height: 30px;
-    border: 1px solid;border-radius: 5px;
-    margin-top: 10px;
-    border-color: #FFF8E3;
-  }
+
 
   .login__registerButton {
     border-radius: 2px;
@@ -66,3 +58,5 @@
     margin-top: 10px;border-radius: 5px;
     border-color:#FFF8E3 ;
   } 
+
+  

@@ -6,19 +6,42 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { useStateValue } from "./StateProvider" ;
-
+import {  signOut} from "firebase/auth";
+import { useState, useEffect } from 'react';
 
 function Header() {
-  const [ {basket , user}, dispatch] = useStateValue();
+  const [ {basket  }, dispatch] = useStateValue();
+  // const user = auth.currentUser;
 
 
+
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(newUser => {
+      setUser(newUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+
+
+  
+  const [user, setUser] = useState(null);
   const handleAuthenticaton = () => {
     if (user) {
       auth.signOut();
     }
   }
+  // const handleAuthenticaton = async () => {
+  //  if(user){ try {
+  //     await signOut(auth);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }}
+  // };
 
-  
+
   return (
     <div className="header">
       <Link to="/">

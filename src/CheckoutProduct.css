@@ -2,7 +2,7 @@
 .checkoutProduct {
     display: flex;
     margin-top: 20px;
-    margin-bottom: 20px; background-color: #F3D7CA;
+    margin-bottom: 20px;  
 }
 
 .checkoutProduct__info {
